@@ -1,0 +1,11 @@
+{
+  "name": "lottery-platform",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "backend": "npm --workspace apps/backend run start:dev",
+    "mobile": "npm --workspace apps/mobile run start",
+    "db:migrate": "npm --workspace apps/backend run prisma:migrate",
+    "db:studio": "npm --workspace apps/backend run prisma:studio"
+  }
+}
