@@ -1,0 +1,33 @@
+{
+  "name": "Lottery Platform",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+
+  "features": {
+    "ghcr.io/devcontainers/features/postgres:1": {
+      "version": "16",
+      "postgresUser": "postgres",
+      "postgresPassword": "postgres"
+    },
+    "ghcr.io/devcontainers/features/redis:1": {
+      "version": "7"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Prisma.prisma",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "bradlc.vscode-tailwindcss",
+        "expo.vscode-expo-tools"
+      ]
+    }
+  },
+
+  "forwardPorts": [3000, 5432, 6379, 8081, 19000, 19006],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "node"
+}
